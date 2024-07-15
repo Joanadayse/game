@@ -1,8 +1,22 @@
-alert("Boas-vindas ao jogo do Número Secreto");
+alert("Boas vindas ao jogo do número secreto");
 let numeroSecreto = 5;
 let chute = prompt("Escolha um número entre 1 e 10");
 
-if (chute == numeroSecreto) {
-  console.log("Isso aí! você descobriu o número secreto (5)");
-}
+let tentativas = 1;
 
+
+while (chute != numeroSecreto) {
+  chute = prompt("Escolha um número entre 1 e 10");
+  // se chute for igual ao número secreto
+  if (chute == numeroSecreto) {
+    // break;
+  } else {
+    if (chute > numeroSecreto) {
+      alert(`O número secreto é menor que ${chute}`);
+    } else {
+      alert(`O número secreto é maior que ${chute}`);
+    }
+    // tentativas = tentativas + 1
+    tentativas++;
+  }
+}
