@@ -1,26 +1,19 @@
-alert("Boas vindas ao jogo do número secreto");
-let numeroSecreto = 5;
-let chute = prompt("Escolha um número entre 1 e 10");
+let numeroSecreto = gerarNumeroAleatorio();
+let chute=5
 
-
-let tentativas = 1;
-
-
-while (chute != numeroSecreto) {
-  chute = prompt("Escolha um número entre 1 e 10");
-  // se chute for igual ao número secreto
-  if (chute == numeroSecreto) {
-    // break;
-  } else {
-    if (chute > numeroSecreto) {
-      alert(`O número secreto é menor que ${chute}`);
-    } else {
-      alert(`O número secreto é maior que ${chute}`);
-    }
-    // tentativas = tentativas + 1
-    tentativas++;
-  }
+function exibirTextoNaTela(tag, texto) {
+  let campo = document.querySelector(tag);
+  campo.innerHTML = texto;
 }
 
+exibirTextoNaTela("h1", "Jogo do número secreto");
+exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
 
+function gerarNumeroAleatorio() {
+  return parseInt(Math.random() * 10 + 1);
+}
 
+function verificarChute() {
+  let chute = document.querySelector("input").value;
+  console.log(chute == numeroSecreto);
+}
